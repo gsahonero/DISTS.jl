@@ -1,5 +1,5 @@
 module DISTS
 
-# Write your package code here.
-
+export DISTS
+include("functions.jl")
 end
