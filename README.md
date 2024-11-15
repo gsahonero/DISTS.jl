@@ -48,5 +48,7 @@ println("Perceptual quality score: ", score)
 - `pretraining`:`String` - defines which pretraining setup will be used. By default set to "DISTS". It supports "Flux" an "Mixed". "Flux" loads the 16 layers of VGG without modification. "Mixed" loads the convolutional layers of VGG without modification, but the pooling layers weights use the weights from `net_params.mat`
 
 ## Comments
-- (AFAIK) Julia does not have an implementation of the DISTS metric, this "package" should do the trick. However, Flux implementation seems to produce different results with respect to PyTorch and MATLAB despite having the same weights.
+- (AFAIK) Julia does not have an implementation of the DISTS metric, this "package" should do the trick. 
+- Flux implementation seems to produce different results with respect to PyTorch and MATLAB despite having the same weights. The results are similar and consistent, though. 
+- The DISTS score between two equal images is near to zero. 
 - Pooling layers from DISTS are implemented as DepthwiseConvolutions.
